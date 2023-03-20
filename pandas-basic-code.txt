@@ -1,0 +1,132 @@
+# 1D array
+
+# import library
+import pandas as pd
+import numpy as np
+
+# ptint dataset
+df = pd.Series("my name is nix")
+df
+
+df = pd.Series(["my","name","is","nix"])
+df
+
+
+
+df = pd.Series(10)
+df
+
+df = pd.Series([10,20,30])
+df
+
+df = pd.Series([10,20,30,40],index = ["i","ii","iii","iv"])
+df
+
+# cheak dataset dimdnsion
+df.ndim
+
+# cheak datatype
+df.dtypes
+
+df=pd.Series({"name":"nix","collage":"xyz university","id":59})
+df
+
+df = pd.Series(50,index = np.arange(10))
+df
+
+df = pd.Series( np.random.randint(1,10,10),index=np.random.randint(1,5,10))
+df
+
+# accessing data
+df[3]
+
+# modifing data
+df[3]=500
+df
+
+# show data
+df.head(2)
+
+# show data
+df.tail(2)
+
+# show data
+df.sample(2)
+
+df.info()
+
+df.describe()
+
+df.mean()
+
+df.mode()
+
+df.mean()
+
+df.median()
+
+df = pd.Series([5,4,10,3,15,8])
+df
+
+df.sort_values()
+
+df.sort_index()
+
+df.sort_values(ascending=False)
+
+#for 2D array
+
+df= pd.DataFrame({"name":["a","b","c"],"collage":["x","y","z"]})
+df
+
+df = pd.DataFrame({"student":{"name":"nix","age":19,"id":59},
+                  "collage":{"name":"ix","age":21}})
+df
+
+# find missing values
+df.isnull().sum()
+
+df.isnull()
+
+
+
+# replace nan values
+df.fillna(25)
+
+#drop columns
+df.drop("collage",axis = 1)
+
+df
+
+
+# permanent replace
+df.fillna(25,inplace = True)
+df
+
+# columns rename
+df.rename(columns = {"collage":"coll"})
+
+
+
+df = pd.DataFrame({"india":{"population":30000,"hospital":1500,"school":3000,"collage":2500},
+                  "america":{"population":35000,"hospital":1200,"school":2000,"collage":2900},
+                  "japan":{"population":40000,"hospital":2000,"school":1000,"collage":2700},
+                  "china":{"population":50000,"hospital":2500,"school":1000,"collage":2800},})
+df
+
+df.india["population"]
+
+df.india["population"] =40000
+df
+
+
+
+# delete row and columns
+del df["india"]
+df
+
+
+
+# sliching row and columns
+df.iloc[ : -1,: -1]
+
